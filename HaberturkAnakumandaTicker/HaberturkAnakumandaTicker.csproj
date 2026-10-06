@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B708EF3E-FBC6-496B-8CAA-B85AD997E66E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>HaberturkAnakumandaTicker</RootNamespace>
+    <AssemblyName>HaberturkAnakumandaTicker</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.VIZTICKERLib">
+      <HintPath>lib\Interop.VIZTICKERLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CategoryCrudControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\CategoryCrudControl.Designer.cs">
+      <DependentUpon>CategoryCrudControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\EconomyCrudControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\EconomyCrudControl.Designer.cs">
+      <DependentUpon>EconomyCrudControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MessageCrudControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\MessageCrudControl.Designer.cs">
+      <DependentUpon>MessageCrudControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\SettingsControl.Designer.cs">
+      <DependentUpon>SettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ControlPanelControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\ControlPanelControl.Designer.cs">
+      <DependentUpon>ControlPanelControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viz\TickerPlaylistBuilder.cs" />
+    <Compile Include="Viz\TickerXml.cs" />
+    <Compile Include="Viz\VizTickerManager.cs" />
+    <Compile Include="UI\PlaylistControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\PlaylistControl.Designer.cs">
+      <DependentUpon>PlaylistControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\PlaylistTemplateRepository.cs" />
+    <Compile Include="Models\PlaylistTemplate.cs" />
+    <Compile Include="UI\QuickBroadcastControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\QuickBroadcastControl.Designer.cs">
+      <DependentUpon>QuickBroadcastControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viz\Broadcaster.cs" />
+    <Compile Include="Viz\TobleronController.cs" />
+    <Compile Include="UI\TobleronControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\TobleronControl.Designer.cs">
+      <DependentUpon>TobleronControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Ui.cs" />
+    <Compile Include="Viz\SceneConfig.cs" />
+    <Compile Include="Viz\VizEngineClient.cs" />
+    <Compile Include="Data\AppSettingRepository.cs" />
+    <Compile Include="Data\CategoryRepository.cs" />
+    <Compile Include="Data\Db.cs" />
+    <Compile Include="Data\EconomyItemRepository.cs" />
+    <Compile Include="Data\TickerMessageRepository.cs" />
+    <Compile Include="Models\AppSetting.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\EconomyItem.cs" />
+    <Compile Include="Models\TickerMessage.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UI\MessageCrudControl.resx">
+      <DependentUpon>MessageCrudControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\QuickBroadcastControl.resx">
+      <DependentUpon>QuickBroadcastControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MySql.Data">
+      <Version>8.4.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

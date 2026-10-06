@@ -1,0 +1,9 @@
+root = true
+
+# Türkçe karakterler bozulmasın: tüm C# ve config dosyaları UTF-8 (BOM'lu)
+[*.{cs,config,resx,csproj,sql}]
+charset = utf-8-bom
+
+[*.cs]
+indent_style = space
+indent_size = 4
