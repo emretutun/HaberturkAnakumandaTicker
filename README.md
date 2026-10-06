@@ -1,5 +1,7 @@
 # Habertürk Anakumanda Ticker 2026
 
+Bu bir test projesidir gerçekliği bulunmamaktadır.
+
 `HT_TICKER_2026_V03` Viz sahnesini **VizTickerService** ve Viz Engine komutlarıyla yöneten
 Windows Forms (.NET Framework 4.8) anakumanda uygulaması. Veriler yerel MySQL'den gelir.
 
